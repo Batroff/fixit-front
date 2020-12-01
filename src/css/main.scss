@@ -1,0 +1,11 @@
+@import "../local_modules/smart-grid/smart-grid.scss";
+
+@include reset();
+
+html {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.wrapper {
+  @include wrapper();
+}

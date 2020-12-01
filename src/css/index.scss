@@ -1,72 +1,8 @@
-$clr-orange: #f98125;
-$clr-white: #FFF;
+@import './common/_variables.scss';
+@import './common/header.scss';
 
-.menu {
-  color: $clr-white;
-  background: $clr-orange;
-  height: 50px;
-
-  &__wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-  }
-
-  &__burger {
-    $line-height: 3px;
-    $line-width: 22px;
-    $line-space: 4px;
-
-    position: relative;
-    width: $line-width;
-
-    &-middle {
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
-
-      width: 100%;
-      height: $line-height;
-      background: $clr-white;
-      border-radius: 10px;
-
-      &:before {
-        content: '';
-        display: block;
-
-        position: absolute;
-        bottom: calc(100% + #{$line-space});
-        left: 0;
-
-        width: 100%;
-        height: inherit;
-        background: inherit;
-        border-radius: 10px;
-      }
-
-      &:after {
-        content: '';
-        display: block;
-
-        position: absolute;
-        top: calc(100% + #{$line-space});
-        left: 0;
-
-        width: 100%;
-        height: inherit;
-        background: inherit;
-        border-radius: 10px;
-      }
-    }
-  }
-}
 
 .about {
-  $title-xs: 35px;
-  $subtitle-xs: 14px;
 
   position: relative;
   background: url("../images/about-bg-xs.jpg") no-repeat;
@@ -76,14 +12,14 @@ $clr-white: #FFF;
   color: $clr-white;
 
   &__title-xs {
-    font-size: $title-xs;
+    font-size: $title-size-xs;
     font-weight: 700;
 
     margin-bottom: 15px;
   }
 
   &__subtitle-xs {
-    font-size: $subtitle-xs;
+    font-size: $subtitle-size-xs;
     font-weight: 300;
     line-height: 18px;
     letter-spacing: 0.1em;

@@ -5,24 +5,12 @@
   position: relative;
 
   &__title {
-    position: relative;
     text-align: center;
 
     color: $clr-white;
-    font-size: $paragraph-size-xs;
+    font-size: $subtitle-size-xs;
+    font-weight: $subtitle-weight;
     margin-bottom: 48px;
-
-    &:after {
-      content: '';
-      position: absolute;
-      display: block;
-      width: 115px;
-      height: 2px;
-      background-color: $clr-white;
-      top: calc(100% + 15px);
-      left: 50%;
-      transform: translateX(-50%);
-    }
   }
 
   &__items {
@@ -72,6 +60,10 @@
 
     &:nth-child(2n - 1) &-img:after {
       left: -#{$circle-width / 2};
+    }
+
+    &-text {
+      font-size: $subtitle-size-xs;
     }
   }
   

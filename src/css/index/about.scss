@@ -6,7 +6,7 @@
   color: $clr-white;
 
   &__title-xs {
-    font-size: $title-size-xs;
+    font-size: $title-size;
     line-height: 1em;
     font-weight: 700;
 
@@ -14,7 +14,7 @@
   }
 
   &__subtitle-xs {
-    font-size: $paragraph-size-xs;
+    font-size: $paragraph-size;
     font-weight: 300;
     line-height: 33px;
 

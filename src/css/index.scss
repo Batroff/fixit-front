@@ -1,9 +1,11 @@
+@import "../local_modules/smart-grid/smart-grid.scss";
 @import './common/_variables.scss';
 
 @import './common/header.scss';
 @import './index/about.scss';
 @import './index/services.scss';
 @import './index/advantages.scss';
+@import './index/sales.scss';
 
 
 .title-underline {
@@ -24,5 +26,9 @@
 
 .color-orange {
   color: $clr-orange;
+}
+
+.text-underline {
+  text-decoration: underline;
 }
 

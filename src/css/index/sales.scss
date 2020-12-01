@@ -1,0 +1,38 @@
+.sales {
+  background: $clr-gray;
+  color: $clr-white;
+
+  &__bg-shape {
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 32px;
+
+    font-size: $subtitle-size;
+    font-weight: $subtitle-weight;
+  }
+
+  &__list {
+    margin-bottom: 31px;
+  }
+
+  &__list-li {
+    $left-shift: 9px;
+    $marker-width: 20px;
+
+    position: relative;
+    margin-left: #{$left-shift + $marker-width};
+    margin-bottom: 20px;
+
+    &:before {
+      content: url("../images/svg/sales__marker.svg");
+      position: absolute;
+      right: calc(100% + #{$left-shift});
+      top: 50%;
+
+      transform: translateY(-50%);
+    }
+  }
+}

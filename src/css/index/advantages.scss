@@ -9,7 +9,7 @@
     text-align: center;
     margin-bottom: 50px;
 
-    font-size: $subtitle-size-xs;
+    font-size: $subtitle-size;
     font-weight: $subtitle-weight;
   }
 
@@ -28,16 +28,19 @@
     }
 
     &-img {
+      $width: 130px;
+
       display: inline-block;
       margin-bottom: 10px;
 
       & > img {
+        width: $width;
         filter: drop-shadow(2px -2px 0px $clr-purple);
       }
     }
 
     &-text {
-      font-size: $subtitle-size-xs;
+      font-size: $subtitle-size;
     }
   }
 }

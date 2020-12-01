@@ -45,7 +45,7 @@ const projPath = {
     fonts: srcDir + '/fonts/'
   },
   watch: {
-    html: srcDir + '/**/*.html',
+    html: srcDir + '/(blocks|*)/*.html',
     css: srcDir + '/css/**/*.{sass,scss}',
     js: srcDir + '/js/**/*.{js,json}',
     sprites: srcDir + '/images/**/*.{png,jpg,gif,webp,svg}'
@@ -178,7 +178,7 @@ function watch() {
   if(isSync) {
     browserSync.init({
       server: {
-        baseDir: buildDir,
+        baseDir: projPath.build,
       }
     });
 

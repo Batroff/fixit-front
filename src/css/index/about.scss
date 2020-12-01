@@ -1,0 +1,43 @@
+.about {
+  position: relative;
+  background: $clr-gray;
+  padding: 45px 0 248px;
+
+  color: $clr-white;
+
+  &__title-xs {
+    font-size: $title-size-xs;
+    line-height: 1em;
+    font-weight: 700;
+
+    margin-bottom: 27px;
+  }
+
+  &__subtitle-xs {
+    font-size: $paragraph-size-xs;
+    font-weight: 300;
+    line-height: 33px;
+
+    margin-bottom: 57px;
+  }
+
+  &__button {
+
+  } 
+
+  &__bg-shape {
+    z-index: $z-index-bg;
+    position: absolute;
+    top: 100%;
+    transform: translateY(-50%);
+    left: 0;
+  }
+
+  &__bg-laptop {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    width: 45%;
+  }
+}

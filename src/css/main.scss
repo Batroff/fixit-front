@@ -1,6 +1,9 @@
 @import "../local_modules/smart-grid/smart-grid.scss";
 @include reset();
 
+@import "./common/_variables.scss";
+@import "./components/_buttons.scss";
+
 html {
   font-family: 'Montserrat', sans-serif;
 }
@@ -8,3 +11,13 @@ html {
 .wrapper {
   @include wrapper();
 }
+
+section {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+}
+
+

@@ -1,0 +1,62 @@
+.prices {
+  background: $clr-gray;
+  padding: 45px 0 28px;
+  color: $clr-white;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 55px;
+
+    font-size: $subtitle-size; // Вылезает за границы даже при 17px
+    font-weight: $subtitle-weight;
+  }
+
+  &__list {
+    margin-bottom: 60px;
+
+    &-li {
+      margin-bottom: 25px;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &-price {
+      color: $clr-orange;
+      padding: 4px 4px 3px 9px;
+      border: 1px solid $clr-orange;
+      border-radius: 50px;
+      min-width: 66px;
+      box-sizing: border-box;
+      text-align: center;
+      font-size: 20px;
+
+      position: relative;
+
+      &:after {
+        content: "₽";
+        color: inherit;
+      }
+
+      &:before {
+        content: 'от';
+        position: absolute;
+        top: 50%; left: 0;
+        transform: translateY(-50%) translateX(-50%);
+        
+        background: $clr-orange;
+        padding: 3px;
+        border-radius: 50px;
+
+        font-size: 8px;
+        font-width: 500;
+        color: $clr-white;
+      }
+    }
+  }
+}

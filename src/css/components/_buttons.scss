@@ -2,11 +2,13 @@
   $font-size: 11px; // xs
   $line-height: 1em;
   $letter-spacing: .185em;
+  $padding-vert: 23px;
 
   display: inline-block;
+  margin: $padding-vert 0;
 
   & > label {
-    padding: 23px 19px;
+    padding: $padding-vert 30px;
     border: 4px solid $clr-purple;
     border-radius: 50px;
 

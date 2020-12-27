@@ -38,9 +38,37 @@
 
       position: relative;
 
+      &:hover {
+        cursor: pointer;
+      }
+
       &:after {
         content: "₽";
         color: inherit;
+        display: inline-block;
+      }
+
+      &.active:after {
+        animation: shake;
+        animation-duration: 1s;
+      }
+      
+      @keyframes shake {
+        10%, 90% {
+          transform: translate3d(-.5px, 0, 0);
+        }
+
+        20%, 80% {
+          transform: translate3d(1px, 0, 0);
+        }
+
+        30%, 50%, 70% {
+          transform: translate3d(-2px, 0, 0);
+        }
+
+        40%, 60% {
+          transform: translate3d(2px, 0, 0);
+        }
       }
 
       &:before {
@@ -54,9 +82,19 @@
         border-radius: 50px;
 
         font-size: 8px;
-        font-width: 500;
+        font-weight: 500;
         color: $clr-white;
       }
+    }
+  }
+
+  &__contact {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    &-tip {
+      margin-bottom: 25px;
     }
   }
 }

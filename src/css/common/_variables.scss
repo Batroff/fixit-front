@@ -3,8 +3,10 @@
 
 $clr-orange: #FF6B00;
 $clr-white: #FFFFFF;
+$clr-black: #000000;
 $clr-purple: #5126FF;
 $clr-gray: #292929;
+$clr-gray-light: lighten($clr-gray, 4%);
 
 // ============================================ //
 
@@ -12,11 +14,13 @@ $clr-gray: #292929;
 // FONT //
 
 $title-size: 35px;
+$title-weight: 700;
 
 $subtitle-size: 20px;
 $subtitle-weight: 600;
 
 $paragraph-size: 17px;
+$paragraph-weight: 400;
 
 // ============================================ //
 

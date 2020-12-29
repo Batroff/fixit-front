@@ -20,6 +20,11 @@ img {
   display: block;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .title-underline {
   position: relative;
 
@@ -43,3 +48,22 @@ img {
 .text-underline {
   text-decoration: underline;
 }
+
+/*------------------------------------------------*/
+/*--------------------- FONT ---------------------*/
+h1 {
+  font-size: $title-size;
+  font-weight: $title-weight;
+}
+
+h2 {
+  font-size: $subtitle-size;
+  font-weight: $subtitle-weight;
+}
+
+p {
+  font-size: $paragraph-size;
+  font-weight: $paragraph-weight;
+}
+
+/*------------------------------------------------*/

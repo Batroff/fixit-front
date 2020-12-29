@@ -1,0 +1,99 @@
+.reviews {
+  padding: 24px 0 65px;
+  background: $clr-gray-light;
+  color: $clr-white;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  &__slider-wrapper {
+    position: relative;
+    margin-bottom: 64px;
+  }
+
+  &__slide {
+    $text-size: 15px;
+    $text-weight: 500;
+    $author-size: 8px;
+
+    padding: 14px 20px 5px;
+
+    color: $clr-black;
+    background-color: #fff;
+    border-radius: 0 20px 20px 20px;
+    border: 3px solid $clr-purple;
+    box-sizing: border-box;
+
+    &-text {
+      font-size: $text-size;
+      font-weight: $text-weight;
+      margin-bottom: 8px;
+    }
+
+    &-author {
+      font-size: $author-size;
+      text-align: right;
+      color: $clr-gray;
+    }
+  }
+
+  &__container {
+    height: 90px;
+  }
+
+  &__btn {
+    $border-width: 2px;
+    $border-color: $clr-white;
+
+    position: absolute;
+    top: 50%;
+
+    display: block;
+    width: 10px;
+    height: 10px;
+    z-index: 2;
+
+    &-prev {
+      border-top: $border-width solid $border-color;
+      border-left: $border-width solid $border-color;
+      transform: rotateZ(-45deg) translateY(-50%);
+
+      left: -13px;
+    }
+
+    &-next {
+      border-top: $border-width solid $border-color;
+      border-right: $border-width solid $border-color;
+      transform: rotateZ(45deg) translateY(-50%);
+
+      right: -13px;
+    }
+  }
+
+  &__pagination {
+    top: calc(100% + 14px);
+    left: 50%; transform: translateX(-50%) !important;
+    font-size: 7px;
+
+    & > span {
+      width: 7px !important;
+      height: 7px !important;
+
+      margin-right: 5px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    & > span.swiper-pagination-bullet-active {
+      background-color: $clr-orange;
+    }
+  }
+
+  &__request {
+    font-size: 15px;
+    font-weight: $paragraph-weight;
+  }
+}

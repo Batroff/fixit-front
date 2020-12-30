@@ -1,6 +1,6 @@
 .reviews {
   padding: 24px 0 65px;
-  background: $clr-gray-light;
+  background: lighten($clr-gray, 4%);
   color: $clr-white;
 
   &__title {

@@ -14,20 +14,26 @@
   }
 
   &__items {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
+    //display: flex;
+    //flex-flow: column nowrap;
+    //align-items: center;
+
+    @include row-flex();
     justify-content: center;
+    padding-top: 25px;
 
     color: $clr-orange;
   }
 
   &__item {
-    $circle-width: 50px;
-    $circle-height: 50px;
+    @include col();
+    @include size(8);
+
+    $circle-width: 60px;
+    $circle-height: 60px;
 
     text-align: center;
-    margin-bottom: 32px;
+    margin-bottom: 60px;
 
     &:last-child {
       margin-bottom: 0;
@@ -37,7 +43,7 @@
       position: relative;
       display: inline-block;
       text-align: center;
-      margin-bottom: 14px;
+      width: 100%;
       z-index: 1;
 
       &:after {
@@ -46,7 +52,7 @@
         height: $circle-height;
 
         position: absolute;
-        top: -#{$circle-height / 2};
+        //top: -#{$circle-height / 2};
         z-index: -1;
 
         background: $clr-purple;
@@ -54,12 +60,50 @@
       }
     }
 
-    &:nth-child(2n) &-img:after {
-      right: -#{$circle-width / 2};
+    // TODO: create mixin / optimize items block
+    $multiplier: 100% / 128;
+    &:nth-child(1) &-img {
+      $offset-top: 19;
+      $offset-bottom: $offset-top;
+      margin-bottom: -#{$offset-bottom}px;
+
+      &:after {
+        top: calc(#{$multiplier} * #{$offset-top} - #{$circle-height / 2});
+        left: -#{$circle-width / 2};
+      }
     }
 
-    &:nth-child(2n - 1) &-img:after {
-      left: -#{$circle-width / 2};
+    &:nth-child(2) &-img {
+      $offset-right: 11;
+      $offset-bottom: 20;
+      margin-bottom: -#{$offset-bottom}px;
+
+      &:after {
+        top: 0;
+        right: calc(-#{$circle-width / 2} + #{$multiplier} * #{$offset-right});
+      }
+    }
+
+    &:nth-child(3) &-img {
+      $offset-top: 7;
+      $offset-bottom: $offset-top;
+      margin-bottom: -#{$offset-bottom}px;
+
+      &:after {
+        top: calc(#{$multiplier} * #{$offset-top} - #{$circle-height / 2});
+        left: -#{$circle-width / 2};
+      }
+    }
+
+    &:nth-child(4) &-img {
+      $offset-right: 28;
+      $offset-bottom: 5;
+      margin-bottom: #{$offset-bottom}px;
+
+      &:after {
+        top: -#{$circle-height / 2};
+        right: calc(-#{$circle-width / 2} + #{$multiplier} * #{$offset-right});
+      }
     }
 
     &-text {

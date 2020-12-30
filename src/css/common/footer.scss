@@ -1,0 +1,15 @@
+.footer {
+  background: $clr-gray;
+  color: $clr-gray-light;
+  padding: 40px 0 20px;
+  text-align: center;
+
+  &__copyright {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  &__text {
+    font-size: 8px;
+  }
+}

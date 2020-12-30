@@ -1,0 +1,105 @@
+.contacts {
+  color: $clr-white;
+  background: $clr-gray;
+  padding: 15px 0 20px;
+
+  &__title {
+    margin-bottom: 44px;
+    text-align: center;
+  }
+
+  &__contact {
+    margin-left: calc(100% / 12);
+    margin-bottom: 29px;
+
+    &-subtitle {
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 19px;
+    }
+
+    &-phone, &-vk {
+      margin-bottom: 9px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      & img {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 9px;
+      }
+
+      & span {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__form {
+    border: 3px solid $clr-purple;
+    padding: 20px 25px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    .title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 17px;
+    }
+
+    .input, .textarea {
+      $border-color: #C2C2C2;
+      $border-width: 1px;
+
+      box-sizing: border-box;
+      display: inline-block;
+      width: 100%;
+      padding: 10px 9px 9px 9px;
+      color: #fff;
+
+      background-color: inherit;
+      border: $border-width solid $border-color;
+      border-radius: 3px;
+
+      &::placeholder {
+        color: #999999;
+        font-size: 12px;
+      }
+    }
+
+    .input {
+      height: 35px;
+      margin-bottom: 15px;
+    }
+
+    .textarea {
+      min-height: 35px;
+      resize: none;
+      margin-bottom: 10px;
+    }
+
+    .button {
+      @supports (appearance: none){
+        appearance: none;
+      }
+
+      border: none;
+      padding: 10px 35px;
+      color: $clr-white;
+      border-radius: 50px;
+      font-size: 10px;
+      font-weight: 400;
+      background: linear-gradient(-45deg, #8526FF, $clr-purple);
+      margin-bottom: 5px;
+    }
+
+    .agreement {
+      max-width: 150px;
+      text-align: center;
+      font-size: 7px;
+      color: #999999;
+    }
+  }
+}

@@ -5,16 +5,19 @@
 
   color: $clr-white;
 
-  &__title-xs {
+  &__title {
     font-size: $title-size;
+    @include sm(font-size, $title-size-sm);
     line-height: 1em;
     font-weight: 700;
 
     margin-bottom: 27px;
+    @include sm(margin-bottom, 51px);
   }
 
-  &__subtitle-xs {
+  &__subtitle {
     font-size: $paragraph-size;
+    @include sm(font-size, $paragraph-size-sm);
     font-weight: 300;
     line-height: 33px;
 
@@ -27,6 +30,11 @@
     top: 100%;
     transform: translateY(-50%);
     left: 0;
+
+    & > img {
+      width: 100%;
+    }
+    @include sm(width, 180px);
   }
 
   &__bg-laptop {
@@ -35,5 +43,9 @@
     bottom: 0;
 
     width: 45%;
+
+    & > img {
+      margin-left: auto;
+    }
   }
 }

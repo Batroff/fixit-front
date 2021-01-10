@@ -55,21 +55,36 @@ a {
 h1 {
   font-size: $title-size;
   font-weight: $title-weight;
+
+  @include sm-block() {
+    font-size: $title-size-sm;
+  };
 }
 
 h2 {
   font-size: $subtitle-size;
   font-weight: $subtitle-weight;
+
+  @include sm-block() {
+    font-size: $subtitle-size-sm;
+  };
 }
 
 h3 {
   font-size: $h3-size;
+  @include sm-block() {
+    font-size: $h3-size-sm;
+  };
   font-weight: $h3-weight;
 }
 
 p {
   font-size: $paragraph-size;
   font-weight: $paragraph-weight;
+
+  @include sm-block() {
+    font-size: $paragraph-size-sm;
+  };
 }
 
 /*------------------------------------------------*/

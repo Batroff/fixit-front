@@ -6,11 +6,6 @@
   color: $clr-white;
 
   &__title {
-    font-size: $title-size;
-    @include sm(font-size, $title-size-sm);
-    line-height: 1em;
-    font-weight: 700;
-
     margin-bottom: 27px;
     @include sm(margin-bottom, 51px);
   }

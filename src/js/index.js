@@ -15,6 +15,12 @@ window.onload = function () {
     }
   });
 
+  /* Burger menu */
+  const menu = document.querySelector('header.menu');
+  const menuBtn = menu.querySelector('.menu__burger');
+  menuBtn.addEventListener('click', function handler(e) {
+    menu.classList.toggle('active');
+  });
 }
 /* Reviews block slider Swiper */
 const swiperReviews = new Swiper('.swiper-container', {

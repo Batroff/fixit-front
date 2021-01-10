@@ -20,7 +20,13 @@
     $line-space: 4px;
 
     position: relative;
+    display: block;
     width: $line-width;
+    height: #{$line-height * 3 + $line-space * 2};
+    
+    &:hover {
+      cursor: pointer;
+    }
 
     &-middle {
       display: block;
@@ -29,10 +35,15 @@
       left: 0;
       transform: translateY(-50%);
 
-      width: 100%;
+      width: $line-width;
       height: $line-height;
       background: $clr-white;
       border-radius: 10px;
+
+      transition: width ease .3s;
+      .active & {
+        width: 0;
+      }
 
       &:before {
         content: '';
@@ -42,10 +53,18 @@
         bottom: calc(100% + #{$line-space});
         left: 0;
 
-        width: 100%;
-        height: inherit;
+        width: $line-width;
+        height: $line-height;
         background: inherit;
         border-radius: 10px;
+        
+        transform: rotateZ(0deg);
+        transform-origin: left top;
+        transition: transform ease .3s;
+        
+        .active & {
+          transform: rotateZ(45deg);
+        }
       }
 
       &:after {
@@ -56,10 +75,19 @@
         top: calc(100% + #{$line-space});
         left: 0;
 
-        width: 100%;
-        height: inherit;
+        width: $line-width;
+        height: $line-height;
         background: inherit;
         border-radius: 10px;
+
+        transform: rotateZ(0deg);
+        transform-origin: left bottom;
+        transition: transform ease .3s, top ease .3s;
+
+        .active & {
+          transform: rotateZ(-45deg);
+          top: calc(100% + #{$line-space} + 1px);
+        }
       }
     }
   }

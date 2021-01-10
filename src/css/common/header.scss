@@ -1,7 +1,8 @@
 .menu {
   color: $clr-white;
   background: $clr-orange;
-  height: 60px;
+  height: 50px;
+  @include sm(height, 60px);
 
   &__wrapper {
     display: flex;
@@ -39,16 +40,19 @@
     $line-width: 22px;
     $line-space: 4px;
 
-    @include sm-block() {
-      $line-width: 44px;
-      $line-height: 4.5px;
-      $line-space: 7.5px;
-    };
+    $line-width-sm: 44px;
+    $line-height-sm: 4.5px;
+    $line-space-sm: 7.5px;
 
     position: relative;
     display: block;
     width: $line-width;
     height: #{$line-height * 3 + $line-space * 2};
+
+    @include sm-block() {
+      width: $line-width-sm;
+      height: #{$line-height-sm * 3 + $line-space-sm * 2};
+    };
     
     &:hover {
       cursor: pointer;
@@ -63,6 +67,11 @@
 
       width: $line-width;
       height: $line-height;
+      @include sm-block() {
+        width: $line-width-sm;
+        height: $line-height-sm;
+      };
+
       background: $clr-white;
       border-radius: 10px;
 
@@ -77,10 +86,12 @@
 
         position: absolute;
         bottom: calc(100% + #{$line-space});
+        @include sm(bottom, calc(100% + #{$line-space-sm}));
         left: 0;
 
         width: $line-width;
-        height: $line-height;
+        @include sm(width, $line-width-sm);
+        height: inherit;
         background: inherit;
         border-radius: 10px;
         
@@ -103,10 +114,13 @@
 
         position: absolute;
         top: calc(100% + #{$line-space});
+        @include sm(top, calc(100% + #{$line-space-sm}));
+
         left: 0;
 
         width: $line-width;
-        height: $line-height;
+        @include sm(width, $line-width-sm);
+        height: inherit;
         background: inherit;
         border-radius: 10px;
 

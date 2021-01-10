@@ -1,7 +1,7 @@
 .services {
   background: $clr-gray url('../images/services-bg-xs.jpg') no-repeat center;
   background-size: cover;
-  padding: 84px 0 110px;
+  padding: 100px 0 110px;
   position: relative;
 
   &__title {
@@ -14,13 +14,8 @@
   }
 
   &__items {
-    //display: flex;
-    //flex-flow: column nowrap;
-    //align-items: center;
-
     @include row-flex();
     justify-content: center;
-    padding-top: 25px;
 
     color: $clr-orange;
   }
@@ -40,74 +35,46 @@
     }
 
     &-img {
-      position: relative;
-      display: inline-block;
-      text-align: center;
-      width: 100%;
-      z-index: 1;
+      width: 128px;
+      height: 128px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
 
-      &:after {
+      img {
+        position: relative;
+        z-index: 2;
+      }
+
+      .img-wrap {
+        position: relative;
+        display: inline-block;
+      }
+
+      .img-wrap:after {
         content: '';
         width: $circle-width;
         height: $circle-height;
 
         position: absolute;
-        //top: -#{$circle-height / 2};
-        z-index: -1;
+        top: -#{$circle-height / 2};
+        z-index: 1;
 
         background: $clr-purple;
         border-radius: 50px;
       }
     }
 
-    // TODO: create mixin / optimize items block
-    $multiplier: 100% / 128;
-    &:nth-child(1) &-img {
-      $offset-top: 19;
-      $offset-bottom: $offset-top;
-      margin-bottom: -#{$offset-bottom}px;
-
-      &:after {
-        top: calc(#{$multiplier} * #{$offset-top} - #{$circle-height / 2});
+    &:nth-child(2n - 1) &-img {
+      .img-wrap:after {
         left: -#{$circle-width / 2};
       }
     }
 
-    &:nth-child(2) &-img {
-      $offset-right: 11;
-      $offset-bottom: 20;
-      margin-bottom: -#{$offset-bottom}px;
-
-      &:after {
-        top: 0;
-        right: calc(-#{$circle-width / 2} + #{$multiplier} * #{$offset-right});
+    &:nth-child(2n) &-img {
+      .img-wrap:after {
+        right: -#{$circle-width / 2};
       }
-    }
-
-    &:nth-child(3) &-img {
-      $offset-top: 7;
-      $offset-bottom: $offset-top;
-      margin-bottom: -#{$offset-bottom}px;
-
-      &:after {
-        top: calc(#{$multiplier} * #{$offset-top} - #{$circle-height / 2});
-        left: -#{$circle-width / 2};
-      }
-    }
-
-    &:nth-child(4) &-img {
-      $offset-right: 28;
-      $offset-bottom: 5;
-      margin-bottom: #{$offset-bottom}px;
-
-      &:after {
-        top: -#{$circle-height / 2};
-        right: calc(-#{$circle-width / 2} + #{$multiplier} * #{$offset-right});
-      }
-    }
-
-    &-text {
-      font-size: $subtitle-size;
     }
   }
   

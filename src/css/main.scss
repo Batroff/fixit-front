@@ -19,7 +19,6 @@ section {
 img {
   display: block;
   max-width: 100%;
-  width: 100%;
 }
 
 a {
@@ -61,6 +60,11 @@ h1 {
 h2 {
   font-size: $subtitle-size;
   font-weight: $subtitle-weight;
+}
+
+h3 {
+  font-size: $h3-size;
+  font-weight: $h3-weight;
 }
 
 p {

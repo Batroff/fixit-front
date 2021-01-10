@@ -1,13 +1,33 @@
 .menu {
   color: $clr-white;
   background: $clr-orange;
-  height: 50px;
+  height: 60px;
 
   &__wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 100%;
+  }
+
+  &__phone {
+    & img {
+      width: 100%;
+    }
+
+    @include sm-block() {
+      width: 28px;
+    };
+  }
+
+  &__logo {
+    & img {
+      width: 100%;
+    }
+
+    @include sm-block() {
+      width: 161px;
+    };
   }
 
   &__nav {
@@ -18,6 +38,12 @@
     $line-height: 3px;
     $line-width: 22px;
     $line-space: 4px;
+
+    @include sm-block() {
+      $line-width: 44px;
+      $line-height: 4.5px;
+      $line-space: 7.5px;
+    };
 
     position: relative;
     display: block;
@@ -59,11 +85,15 @@
         border-radius: 10px;
         
         transform: rotateZ(0deg);
-        transform-origin: left top;
-        transition: transform ease .3s;
+        transition-property: transform, bottom;
+        transform-origin: center;
+        transition-timing-function: ease;
+        transition-duration: .4s, .2s;
+        transition-delay: .2s, 0s;
         
         .active & {
           transform: rotateZ(45deg);
+          bottom: 0;
         }
       }
 
@@ -81,12 +111,16 @@
         border-radius: 10px;
 
         transform: rotateZ(0deg);
-        transform-origin: left bottom;
-        transition: transform ease .3s, top ease .3s;
+        transform-origin: center;
+
+        transition-property: transform, top;
+        transition-timing-function: ease;
+        transition-duration: .4s, .2s;
+        transition-delay: .2s, 0s;
 
         .active & {
           transform: rotateZ(-45deg);
-          top: calc(100% + #{$line-space} + 1px);
+          top: 0;
         }
       }
     }

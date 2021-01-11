@@ -7,8 +7,7 @@
     text-align: center;
     margin-bottom: 55px;
 
-    font-size: $subtitle-size; // Вылезает за границы даже при 17px
-    font-weight: $subtitle-weight;
+    @include sm(margin-bottom, 70px);
   }
 
   &__list {
@@ -24,6 +23,12 @@
       &:last-child {
         margin-bottom: 0;
       }
+    }
+
+    &-text {
+      @include sm-block() {
+        font-size: 24px;
+      };
     }
 
     &-price {
@@ -94,7 +99,10 @@
     align-items: center;
 
     &-tip {
-      margin-bottom: 25px;
+      margin-bottom: 20px;
+
+      font-size: 16px;
+      text-align: center;
     }
   }
 }

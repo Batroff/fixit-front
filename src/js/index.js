@@ -1,5 +1,4 @@
 import Swiper, {Navigation, Pagination} from "swiper";
-Swiper.use([Navigation, Pagination]);
 
 window.onload = function () {
   /* Prices block onclick price shaking animation */
@@ -21,18 +20,38 @@ window.onload = function () {
   menuBtn.addEventListener('click', function handler(e) {
     menu.classList.toggle('active');
   });
+
+  /* Sales scrolling image effect */
+  const salesImg = document.querySelector('.sales__bg-person') ;
+  const salesOffset = salesImg.offsetTop - document.documentElement.clientHeight;
+  let isSalesScrolled = false;
+  let timer = setInterval(function() {
+    if (isSalesScrolled) clearInterval(timer);
+    if (window.pageYOffset >= salesOffset) {
+      salesImg.classList.add('scrolled');
+      isSalesScrolled = true;
+    }
+  }, 200);
 }
-/* Reviews block slider Swiper */
-const swiperReviews = new Swiper('.swiper-container', {
-  loop: true,
-  autoHeight: true,
 
-  pagination: {
-    el: '.reviews__pagination',
-  },
+window.addEventListener('scroll', function handler() {
+  /* Reviews block slider Swiper */
+  Swiper.use([Navigation, Pagination]);
+  const swiperReviews = new Swiper('.swiper-container', {
+    loop: true,
+    autoHeight: true,
 
-  navigation: {
-    nextEl: '.reviews__btn-next',
-    prevEl: '.reviews__btn-prev',
-  },
+    pagination: {
+      el: '.reviews__pagination',
+    },
+
+    navigation: {
+      nextEl: '.reviews__btn-next',
+      prevEl: '.reviews__btn-prev',
+    },
+  });
+
+  this.removeEventListener('scroll', handler);
 });
+
+

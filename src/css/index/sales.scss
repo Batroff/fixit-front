@@ -4,14 +4,14 @@
 
   &__bg-shape {
     margin-bottom: 10px;
+
+
   }
 
   &__title {
     text-align: center;
     margin-bottom: 50px;
-
-    font-size: $subtitle-size;
-    font-weight: $subtitle-weight;
+    @include sm(margin-bottom, 70px);
   }
 
   &__list {
@@ -19,24 +19,59 @@
   }
 
   &__list-li {
+    // COMMON
     $left-shift: 9px;
+
+    // XS
     $marker-width: 20px;
+    $marker-height: 20px;
+
+    // SM
+    $marker-width-sm: 30px;
+    $marker-height-sm: 30px;
 
     position: relative;
     margin-left: #{$left-shift + $marker-width};
     margin-bottom: 20px;
+
+    @include sm-block() {
+      font-size: 24px;
+      margin-left: #{$left-shift + $marker-width-sm};
+    };
 
     &:last-child {
       margin-bottom: 0;
     }
 
     &:before {
-      content: url("../images/svg/sales__marker.svg");
+      content: '';
+
+      width: $marker-width;
+      height: $marker-height;
+      @include sm-block() {
+        width: $marker-width-sm;
+        height: $marker-height-sm;
+      };
+
+      background: url("../images/svg/sales__marker.svg") no-repeat center;
+      background-size: 100%;
+
+      display: block;
       position: absolute;
       right: calc(100% + #{$left-shift});
       top: 50%;
 
       transform: translateY(-50%);
+    }
+  }
+
+  &__bg-person {
+    position: relative;
+    left: -100%;
+    transition: left 1s ease-in-out;
+
+    &.scrolled {
+      left: 0;
     }
   }
 }

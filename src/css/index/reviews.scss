@@ -1,11 +1,13 @@
 .reviews {
-  padding: 24px 0 65px;
+  padding: 30px 0 20px;
   background: lighten($clr-gray, 4%);
   color: $clr-white;
 
   &__title {
     text-align: center;
     margin-bottom: 32px;
+
+    @include sm(margin-bottom, 50px);
   }
 
   &__slider-wrapper {
@@ -15,10 +17,12 @@
 
   &__slide {
     $text-size: 15px;
+    $text-size-sm: 20px;
     $text-weight: 500;
     $author-size: 8px;
 
     padding: 14px 20px 5px;
+    @include sm(padding, 25px 25px 20px);
 
     color: $clr-black;
     background-color: #fff;
@@ -28,6 +32,9 @@
 
     &-text {
       font-size: $text-size;
+      @include sm-block() {
+        font-size: $text-size-sm;
+      };
       font-weight: $text-weight;
       margin-bottom: 8px;
     }
@@ -81,10 +88,20 @@
       width: 7px !important;
       height: 7px !important;
 
+      @include sm-block() {
+        width: 10.5px !important;
+        height: 10.5px !important;
+      };
+
       margin-right: 5px;
       &:last-child {
         margin-right: 0;
       }
+    }
+
+    & > span.swiper-pagination-bullet {
+      background-color: #C4C4C4;
+      opacity: 1;
     }
 
     & > span.swiper-pagination-bullet-active {
@@ -93,6 +110,7 @@
   }
 
   &__request {
+    text-align: center;
     font-size: 15px;
     font-weight: $paragraph-weight;
   }

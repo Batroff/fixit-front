@@ -33,10 +33,15 @@
     position: relative;
     margin-left: #{$left-shift + $marker-width};
     margin-bottom: 20px;
+    font-weight: 300;
 
     @include sm-block() {
       font-size: 24px;
       margin-left: #{$left-shift + $marker-width-sm};
+    };
+
+    @include md-block() {
+      font-size: 30px;
     };
 
     &:last-child {

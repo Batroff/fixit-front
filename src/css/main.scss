@@ -19,6 +19,7 @@ section {
 img {
   display: block;
   max-width: 100%;
+  max-height: 100%;
   width: 100%;
 }
 
@@ -60,6 +61,11 @@ h1 {
   @include sm-block() {
     font-size: $title-size-sm;
   };
+
+  @include md-block() {
+    line-height: 100%;
+    font-size: $title-size-md;
+  };
 }
 
 h2 {
@@ -68,6 +74,10 @@ h2 {
 
   @include sm-block() {
     font-size: $subtitle-size-sm;
+  };
+
+  @include md-block() {
+    font-size: $subtitle-size-md;
   };
 }
 

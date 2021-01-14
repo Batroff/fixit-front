@@ -6,6 +6,7 @@
 
 html {
   font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
 }
 
 .wrapper {
@@ -41,6 +42,8 @@ a {
     top: calc(100% + 15px);
     left: 50%;
     transform: translateX(-50%);
+
+    @include md(width, 220px);
   }
 }
 
@@ -83,10 +86,13 @@ h2 {
 
 h3 {
   font-size: $h3-size;
+  font-weight: $h3-weight;
   @include sm-block() {
     font-size: $h3-size-sm;
   };
-  font-weight: $h3-weight;
+  @include md-block() {
+    font-size: $h3-size-md;
+  };
 }
 
 p {

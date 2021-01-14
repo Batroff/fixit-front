@@ -3,15 +3,24 @@
   padding: 45px 0 28px;
   color: $clr-white;
 
+  @include md-block() {
+    padding: 101px 0 76px;
+  };
+
   &__title {
     text-align: center;
     margin-bottom: 55px;
 
     @include sm(margin-bottom, 70px);
+    @include md(margin-bottom, 100px);
   }
 
   &__list {
     margin-bottom: 60px;
+    @include md-block() {
+      max-width: calc(100% / 12 * 9);
+      margin: 0 auto 60px;
+    };
 
     &-li {
       margin-bottom: 25px;

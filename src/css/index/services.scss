@@ -1,8 +1,13 @@
 .services {
-  background: $clr-gray url('../images/services-bg-xs.jpg') no-repeat center;
+  background-image: url('../images/services-bg-480.jpg');
+  background-color: $clr-gray;
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
   padding: 100px 0 110px;
   position: relative;
+
+  @include md(background-image, url('../images/services-bg-768.jpg'));
 
   &__title {
     text-align: center;
@@ -10,12 +15,12 @@
 
     margin-bottom: 48px;
     @include sm(margin-bottom, 71px);
+    @include md(margin-bottom, 117px);
   }
 
   &__items {
     @include row-flex();
     justify-content: center;
-
     color: $clr-orange;
   }
 
@@ -40,6 +45,11 @@
       height: 253px;
     };
 
+    @include md-block() {
+      height: 360px;
+      margin-bottom: 96px;
+    };
+
     &:last-child {
       margin-bottom: 0;
     }
@@ -59,14 +69,30 @@
         border-radius: 50%;
       };
 
+      @include md-block() {
+        width: 312px;
+        height: 312px;
+      };
+
       img {
         position: relative;
+        vertical-align: middle;
         z-index: 2;
+
+        top: 50%; transform: translateY(-50%);
       }
 
       .img-wrap {
         position: relative;
         display: inline-block;
+
+        width: 128px;
+        height: 128px;
+
+        @include md-block() {
+          width: 196px;
+          height: 196px;
+        };
       }
 
       .img-wrap:after {
@@ -97,7 +123,7 @@
       }
     }
   }
-  
+
   &__bg-shape {
     position: absolute;
     top: 100%;
@@ -105,7 +131,8 @@
 
     transform: translateY(-50%);
     @include sm(width, 180px);
-    
+    @include md(width, 230px);
+
     & > img {
       transform: rotateY(180deg) ;
       width: 100%;

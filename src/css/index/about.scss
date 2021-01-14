@@ -2,21 +2,22 @@
   position: relative;
   background: $clr-gray;
   padding: 45px 0 248px;
-
   color: $clr-white;
 
   &__title {
     margin-bottom: 27px;
-    @include sm(margin-bottom, 51px);
+    @include sm(margin-bottom, 30px);
   }
 
   &__subtitle {
-    font-size: $paragraph-size;
-    @include sm(font-size, $paragraph-size-sm);
     font-weight: 300;
     line-height: 33px;
 
     margin-bottom: 40px;
+    @include md-block() {
+      font-size: 24px;
+      line-height: 40px;
+    };
   }
 
   &__bg-shape {
@@ -26,21 +27,23 @@
     transform: translateY(-50%);
     left: 0;
 
-    & > img {
-      width: 100%;
-    }
     @include sm(width, 180px);
+    @include md(width, 230px);
   }
 
   &__bg-laptop {
     position: absolute;
     right: 0;
     bottom: 0;
-
     width: 45%;
 
     & > img {
       margin-left: auto;
     }
+
+    @include md-block() {
+      width: 330px;
+      transform: rotateZ(195deg) translate(-70px, -70px);
+    };
   }
 }

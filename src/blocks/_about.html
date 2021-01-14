@@ -13,7 +13,9 @@
     <img src="./images/svg/triangle-shape.svg" alt="">
   </div>
 
-  <div class="about__bg-laptop">
-    <img src="./images/about-bg-laptop.png" alt="">
-  </div>
+  <picture class="about__bg-laptop">
+    <source media="(max-width: 479px)" srcset="./images/about-bg-480.png">
+    <source media="(max-width: 767px)" srcset="./images/about-bg-768.png">
+    <img src="./images/about-bg.png" alt="">
+  </picture>
 </section>

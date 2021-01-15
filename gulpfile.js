@@ -111,6 +111,11 @@ gulp.task('modules:build', function() {
     .pipe(gulp.dest(projPath.build.modules));
 });
 
+gulp.task('other:build', function() {
+  return gulp.src(`${srcDir}/*.{xml,webmanifest,ico}`)
+    .pipe(gulp.dest(`${buildDir}/`));
+});
+
 gulp.task('fonts:build', function() {
   return gulp.src(projPath.src.fonts)
     .pipe(gulp.dest(projPath.build.fonts));
@@ -170,7 +175,7 @@ gulp.task('modules', gulp.series('modules:clear', 'modules:build'));
 gulp.task('fonts', gulp.series('fonts:clear', 'fonts:build'));
 gulp.task('build', gulp.series(
   gulp.parallel('clear', 'modules:clear'),
-  gulp.parallel('css:build', 'js:build', 'sprites:build', 'html:build', 'fonts:build', 'modules:build')));
+  gulp.parallel('css:build', 'js:build', 'sprites:build', 'html:build', 'fonts:build', 'modules:build', 'other:build')));
 // =====================================================================================================================
 
 // Watcher =============================================================================================================

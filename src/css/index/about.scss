@@ -1,23 +1,65 @@
 .about {
   position: relative;
-  background: $clr-gray;
   padding: 45px 0 248px;
+
+  background: $clr-gray;
   color: $clr-white;
+  @include lg-block() {
+    padding: 180px 0 270px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      border-top: 15.625vw solid transparent;
+      border-left: 50vw solid $clr-white;
+      border-right: 50vw solid $clr-white;
+      border-bottom: 0;
+    }
+
+    .wrapper {
+      position: relative;
+    }
+  };
 
   &__title {
     margin-bottom: 27px;
     @include sm(margin-bottom, 30px);
+    @include lg(display, none);
+
+    &-lg {
+      display: none;
+      @include lg(display, block);
+
+      margin-bottom: 50px;
+    }
   }
 
   &__subtitle {
+    margin-bottom: 40px;
+
     font-weight: 300;
     line-height: 33px;
-
-    margin-bottom: 40px;
     @include md-block() {
       font-size: 24px;
       line-height: 40px;
     };
+    @include lg-block() {
+      display: none;
+    };
+
+    &-lg {
+      display: none;
+      margin-bottom: 50px;
+
+      line-height: 55px;
+      font-size: 30px;
+      @include lg-block() {
+        display: block;
+      };
+    }
   }
 
   &__bg-shape {
@@ -29,6 +71,7 @@
 
     @include sm(width, 180px);
     @include md(width, 230px);
+    @include lg(display, none);
   }
 
   &__bg-laptop {
@@ -45,5 +88,16 @@
       width: 330px;
       transform: rotateZ(195deg) translate(-70px, -70px);
     };
+
+    @include lg-block() {
+      display: none;
+    };
+  }
+
+  &__banner {
+    position: absolute;
+    top: -87px;
+    right: 0;
+    width: 578px;
   }
 }

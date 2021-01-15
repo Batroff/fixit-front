@@ -11,4 +11,76 @@
 @import './index/contacts';
 @import './common/footer.scss';
 
+@include lg-block() {
+  @supports not (display: grid) {
+    main[role="main"] {
+      display: flex;
+      flex-flow: column nowrap;
+    }
 
+    .menu, .about, .services {
+      order: -1;
+    }
+
+    .prices {
+      order: 1;
+    }
+
+    section, footer {
+      order: 2;
+    }
+  }
+
+  @supports (display: grid) {
+    main[role="main"] {
+      display: grid;
+      grid-template-rows: auto;
+      grid-template-columns: 1fr;
+      grid-template-areas: 'menu'
+                           'about'
+                           'services'
+                           'prices'
+                           'advantages'
+                           'sales'
+                           'reviews'
+                           'contacts'
+                           'footer';
+    }
+
+    .menu {
+      grid-area: menu;
+    }
+
+    .about {
+      grid-area: about;
+    }
+
+    .services {
+      grid-area: services;
+    }
+
+    .prices {
+      grid-area: prices;
+    }
+
+    .advantages {
+      grid-area: advantages;
+    }
+
+    .sales {
+      grid-area: sales;
+    }
+
+    .reviews {
+      grid-area: reviews;
+    }
+
+    .contacts {
+      grid-area: contacts;
+    }
+
+    .footer {
+      grid-area: footer;
+    }
+  }
+};

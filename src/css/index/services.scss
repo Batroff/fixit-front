@@ -1,57 +1,98 @@
 .services {
+  padding: 100px 0 110px;
+  position: relative;
+
   background-image: url('../images/services-bg-480.jpg');
   background-color: $clr-gray;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding: 100px 0 110px;
-  position: relative;
 
   @include md(background-image, url('../images/services-bg-768.jpg'));
+  @include lg-block() {
+    padding: 49px 0 75px;
+
+    background-image: none;
+    background-color: $clr-white;
+  };
+
+  .wrapper {
+    position: relative;
+    z-index: 10;
+  }
 
   &__title {
+    margin-bottom: 48px;
+
     text-align: center;
     color: $clr-white;
 
-    margin-bottom: 48px;
     @include sm(margin-bottom, 71px);
     @include md(margin-bottom, 117px);
+    @include lg-block() {
+      color: #000;
+
+      &:after {
+        background-color: #000;
+      }
+    };
   }
 
   &__items {
     @include row-flex();
     justify-content: center;
-    color: $clr-orange;
   }
 
   &__item {
-    @include col();
-    @include size(8);
-    @include size-sm(6);
-
     $circle-width: 60px;
     $circle-height: 60px;
 
-    text-align: center;
-    margin-bottom: 60px;
-
+    @include col();
+    @include size(8);
+    @include size-sm(6);
+    @include size-lg(3);
     display: flex;
     flex-flow: column nowrap;
-    justify-content: space-between;
-    align-items: center;
     height: 160px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 60px;
+
+    text-align: center;
+
 
     @include sm-block() {
-      height: 253px;
+      height: unset;
     };
 
     @include md-block() {
-      height: 360px;
       margin-bottom: 96px;
+    };
+
+    @include lg-block() {
+      margin-bottom: 57px;
     };
 
     &:last-child {
       margin-bottom: 0;
+    }
+
+    &:nth-child(4), &:nth-child(5),
+    &:nth-child(7), &:nth-child(8) {
+      display: none;
+      @include lg(display, block);
+    }
+
+    &-text {
+      color: $clr-orange;
+
+      @include md-block() {
+        font-size: 40px;
+      };
+
+      @include lg-block() {
+        color: #000;
+      };
     }
 
     &-img {
@@ -70,8 +111,13 @@
       };
 
       @include md-block() {
-        width: 312px;
-        height: 312px;
+        width: 304px;
+        height: 304px;
+        margin-bottom: 48px;
+      };
+
+      @include lg-block() {
+        margin-bottom: 20px;
       };
 
       img {
@@ -124,18 +170,46 @@
     }
   }
 
+  // TODO: replace svg triangle to css borders
   &__bg-shape {
     position: absolute;
     top: 100%;
     right: 0;
-
     transform: translateY(-50%);
+
     @include sm(width, 180px);
     @include md(width, 230px);
+    @include lg(display, none);
 
     & > img {
       transform: rotateY(180deg) ;
-      width: 100%;
     }
+  }
+
+  &__gearwheel,
+  &__phone,
+  &__laptop {
+    display: none;
+    position: absolute;
+
+    @include lg(display, block);
+  }
+
+  &__gearwheel {
+    top: 0;
+    left: 80px;
+    width: 92px;
+    height: 92px;
+  }
+
+  &__phone {
+    top: 26px;
+    right: -155px;
+    z-index: 0;
+  }
+
+  &__laptop {
+    left: 0;
+    bottom: -260px;
   }
 }

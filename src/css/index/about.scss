@@ -14,8 +14,8 @@
       left: 0;
 
       border-top: 15.625vw solid transparent;
-      border-left: 50vw solid $clr-white;
-      border-right: 50vw solid $clr-white;
+      border-left: 50vw solid $clr-white-dark;
+      border-right: 50vw solid $clr-white-dark;
       border-bottom: 0;
     }
 
@@ -95,9 +95,12 @@
   }
 
   &__banner {
+    display: none;
     position: absolute;
     top: -87px;
     right: 0;
     width: 578px;
+
+    @include lg(display, block);
   }
 }

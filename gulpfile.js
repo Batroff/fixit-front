@@ -144,13 +144,12 @@ gulp.task('grid', function(done) {
     offset: '30px', /* gutter width px || % || rem */
     mobileFirst: true, /* mobileFirst ? 'min-width' : 'max-width' */
     container: {
-      maxWidth: '1340px', /* max-width оn very large screen */
+      maxWidth: '1306px', /* max-width оn very large screen */
       fields: '30px' /* side fields */
     },
     breakPoints: {
       lg: {
-        width: '1280px',
-        fields: '15px',
+        width: '1366px',
         offset: '30px'
       },
       md: {

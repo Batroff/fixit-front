@@ -12,27 +12,73 @@
   }
 
   &__phone {
-    & img {
-      width: 100%;
-    }
-
     @include sm-block() {
       width: 28px;
     };
-  }
+    @include lg-block() {
+      display: none;
+    };
 
-  &__logo {
     & img {
       width: 100%;
     }
+  }
 
+  &__logo {
     @include sm-block() {
       width: 161px;
     };
+
+    transform: scale3d(1, 1, 1);
+    transition: transform .1s ease;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale3d(1.1, 1.1, 1.1);
+    }
   }
 
   &__nav {
     display: none;
+
+    @include lg-block() {
+      display: block;
+    };
+  }
+
+  &__li {
+    display: inline-block;
+    margin-right: 55px;
+    position: relative;
+
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 24px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      &:after {
+        width: 100%;
+      }
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      position: absolute;
+      top: 100%;
+      left: 0;
+
+      background: $clr-white;
+      transition: width .3s ease-in-out;
+    }
   }
 
   &__burger {
@@ -52,6 +98,10 @@
     @include sm-block() {
       width: $line-width-sm;
       height: #{$line-height-sm * 3 + $line-space-sm * 2};
+    };
+
+    @include lg-block() {
+      display: none;
     };
     
     &:hover {

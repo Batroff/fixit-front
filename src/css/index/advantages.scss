@@ -1,5 +1,6 @@
 .advantages {
   padding: 102px 0 57px;
+
   background-image: url('../images/advantages-bg-480.jpg');
   background-repeat: no-repeat;
   background-position: center;
@@ -8,6 +9,7 @@
     background-image: url('../images/advantages-bg-768.jpg');
     padding: 148px 0 48px;
   };
+
   @include md-block() {
     padding: 200px 0 48px;
   };

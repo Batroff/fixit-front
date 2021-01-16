@@ -13,7 +13,7 @@
     padding: 49px 0 75px;
 
     background-image: none;
-    background-color: $clr-white;
+    background-color: $clr-white-dark;
   };
 
   .wrapper {
@@ -25,15 +25,15 @@
     margin-bottom: 48px;
 
     text-align: center;
-    color: $clr-white;
+    color: $clr-white-dark;
 
     @include sm(margin-bottom, 71px);
     @include md(margin-bottom, 117px);
     @include lg-block() {
-      color: #000;
+      color: $clr-black;
 
       &:after {
-        background-color: #000;
+        background-color: $clr-black;
       }
     };
   }
@@ -122,18 +122,16 @@
 
       img {
         position: relative;
-        vertical-align: middle;
         z-index: 2;
 
-        top: 50%; transform: translateY(-50%);
+        @include md-block() {
+          top: 50%; transform: translateY(-50%);
+        };
       }
 
       .img-wrap {
         position: relative;
         display: inline-block;
-
-        width: 128px;
-        height: 128px;
 
         @include md-block() {
           width: 196px;
@@ -211,5 +209,6 @@
   &__laptop {
     left: 0;
     bottom: -260px;
+    z-index: 100;
   }
 }

@@ -44,6 +44,10 @@ a {
     transform: translateX(-50%);
 
     @include md(width, 220px);
+    @include lg-block() {
+      width: 255px;
+      height: 4px;
+    };
   }
 }
 
@@ -68,6 +72,11 @@ h1 {
   @include md-block() {
     line-height: 100%;
     font-size: $title-size-md;
+  };
+
+  @include lg-block() {
+    font-size: $title-size-lg;
+    font-weight: $title-weight-lg;
   };
 }
 

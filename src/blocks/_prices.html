@@ -1,52 +1,102 @@
-<section class="prices">
-  <div class="wrapper">
+<section class="prices" id="prices">
+  <div class="wrapper prices__wrapper">
 <!--    <h2 class="prices__title title-underline">Цены на популярные услуги</h2>-->
     <h2 class="prices__title title-underline">Популярные услуги</h2>
 
-    <ul class="prices__list">
-      <li class="prices__list-li">
-        <p class="prices__list-text">Установка<br>Windows</p>
-        <p class="prices__list-price">700</p>
-      </li>
-      <li class="prices__list-li">
-        <p class="prices__list-text">Чистка<br>устройства</p>
-        <p class="prices__list-price">600</p>
-      </li>
-      <li class="prices__list-li">
-        <p class="prices__list-text">Удаление<br>вирусов</p>
-        <div class="prices__list-price">300</div>
-      </li>
-      <li class="prices__list-li">
-        <p class="prices__list-text">Настройка<br>роутера</p>
-        <p class="prices__list-price">300</p>
-      </li>
-      <li class="prices__list-li">
-        <p class="prices__list-text">Оптимизация<br>работы</p>
-        <p class="prices__list-price">400</p>
-      </li>
-      <li class="prices__list-li">
-        <p class="prices__list-text">Установка<br>программ</p>
-        <p class="prices__list-price">100</p>
-      </li>
-      <li class="prices__list-li">
-        <p class="prices__list-text">Замена<br>дисплея</p>
-        <p class="prices__list-price">800</p>
-      </li>
-      <li class="prices__list-li">
-        <p class="prices__list-text">Замена<br>аккумулятора</p>
-        <p class="prices__list-price">700</p>
-      </li>
-    </ul>
+    <div class="prices__content">
 
+      <ul class="prices__list">
 
-    <div class="prices__contact">
-      <p class="prices__contact-tip">Не нашли цену на решение своей проблемы? Жмите на кнопку ниже! Оператор нашего сервиса обязательно поможет вам!</p>
+        <li class="prices__list-li">
+          <p class="prices__list-text">Установка<br>Windows</p>
+          <div class="prices__list-time">
+            <div class="img-wrap"><img src="./images/svg/prices-clock.svg" alt=""></div>
+            <span class="text">~40 минут</span>
+          </div>
+          <div class="prices__list-price"><span>700</span></div>
+        </li>
 
-      <div class="prices__contact-button button-purple">
-        <label for="prices__button-input" class="prices__button-label">Позвонить нам</label>
-        <input id="prices__button-input" class="prices__button-input" type="button" name="connect">
+        <li class="prices__list-li">
+          <p class="prices__list-text">Чистка<br>устройства</p>
+          <div class="prices__list-time">
+            <div class="img-wrap"><img src="./images/svg/prices-clock.svg" alt=""></div>
+            <span class="text">~20 минут</span>
+          </div>
+          <p class="prices__list-price">600</p>
+        </li>
+
+        <li class="prices__list-li">
+          <p class="prices__list-text">Удаление<br>вирусов</p>
+          <div class="prices__list-time">
+            <div class="img-wrap"><img src="./images/svg/prices-clock.svg" alt=""></div>
+            <span class="text">~40 минут</span>
+          </div>
+          <div class="prices__list-price">300</div>
+        </li>
+
+        <li class="prices__list-li">
+          <p class="prices__list-text">Настройка<br>роутера</p>
+          <div class="prices__list-time">
+            <div class="img-wrap"><img src="./images/svg/prices-clock.svg" alt=""></div>
+            <span class="text">~30 минут</span>
+          </div>
+          <p class="prices__list-price">300</p>
+        </li>
+
+        <li class="prices__list-li">
+          <p class="prices__list-text">Оптимизация<br>работы</p>
+          <div class="prices__list-time">
+            <div class="img-wrap"><img src="./images/svg/prices-clock.svg" alt=""></div>
+            <span class="text">~10 минут</span>
+          </div>
+          <p class="prices__list-price">400</p>
+        </li>
+
+        <li class="prices__list-li">
+          <p class="prices__list-text">Установка<br>программ</p>
+          <div class="prices__list-time">
+            <div class="img-wrap"><img src="./images/svg/prices-clock.svg" alt=""></div>
+            <span class="text">~40 минут</span>
+          </div>
+          <p class="prices__list-price">100</p>
+        </li>
+
+        <li class="prices__list-li">
+          <p class="prices__list-text">Замена<br>дисплея</p>
+          <div class="prices__list-time">
+            <div class="img-wrap"><img src="./images/svg/prices-clock.svg" alt=""></div>
+            <span class="text">~40 минут</span>
+          </div>
+          <p class="prices__list-price">800</p>
+        </li>
+
+        <li class="prices__list-li">
+          <p class="prices__list-text">Замена<br>аккумулятора</p>
+          <div class="prices__list-time">
+            <div class="img-wrap"><img src="./images/svg/prices-clock.svg" alt=""></div>
+            <span class="text">~40 минут</span>
+          </div>
+          <p class="prices__list-price">700</p>
+        </li>
+
+      </ul>
+
+      <div class="prices__contact">
+        <p class="prices__contact-tip">Не нашли цену на решение своей проблемы? Жмите на кнопку ниже! Оператор нашего сервиса обязательно поможет вам!</p>
+
+        <div class="prices__contact-button button-purple">
+          <label for="prices__button-input" class="prices__button-label">Позвонить нам</label>
+          <input id="prices__button-input" class="prices__button-input" type="button" name="connect">
+        </div>
       </div>
+
+      <div class="prices__orange-lg prices__gearwheel"><img src="./images/svg/prices-wheel-orange-lg.svg" alt=""></div>
     </div>
 
+    <p class="prices__show-btn">Показать ещё</p>
+
+    <div class="prices__blue-sm prices__gearwheel"><img src="./images/svg/prices-wheel-blue-sm.svg" alt=""></div>
+    <div class="prices__orange-sm prices__gearwheel"><img src="./images/svg/prices-wheel-orange-sm.svg" alt=""></div>
+    <div class="prices__blue-lg prices__gearwheel"><img src="./images/svg/prices-wheel-blue-lg.svg" alt=""></div>
   </div>
 </section>

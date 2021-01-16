@@ -1,11 +1,40 @@
 .prices {
-  background: $clr-gray;
   padding: 45px 0 28px;
+  position: relative;
+
+  background: $clr-gray;
   color: $clr-white;
+  text-align: center;
 
   @include md-block() {
     padding: 101px 0 76px;
   };
+
+  @include lg-block() {
+    padding: 80px 0 60px;
+
+    background: $clr-white-dark;
+    color: $clr-black;
+  };
+
+  &:after {
+    content: '';
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    border-left: 50vw solid $clr-white-dark;
+    border-bottom: 250px solid transparent;
+    border-right: 50vw solid $clr-white-dark;
+    border-top: 0;
+    @include lg(display, block);
+  }
+
+  .wrapper {
+    position: relative;
+    z-index: 10;
+  }
 
   &__title {
     text-align: center;
@@ -13,13 +42,84 @@
 
     @include sm(margin-bottom, 70px);
     @include md(margin-bottom, 100px);
+    @include lg-block() {
+      color: $clr-black;
+      margin-bottom: 115px;
+
+      &:after {
+        background-color: $clr-black;
+      }
+    };
+  }
+
+  &__content {
+    text-align: left;
+
+    @include lg-block() {
+      overflow: hidden;
+      height: 512px;
+      transition: height 1s ease-in-out;
+
+      &.open {
+        height: 1224px;
+      }
+    };
+  }
+
+  &__show-btn {
+    $color: #939393;
+
+    display: none;
+    position: relative;
+
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 100%;
+    color: $color;
+
+    @include lg-block() {
+      display: inline-block;
+      opacity: 1;
+      height: 43px;
+      transition: all .5s ease;
+    };
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 85%;
+      border-bottom: 3px dotted $color;
+    }
+
+    .prices__content.open + & {
+      opacity: 0;
+      height: 0;
+    }
   }
 
   &__list {
     margin-bottom: 60px;
+
     @include md-block() {
       max-width: calc(100% / 12 * 9);
       margin: 0 auto 60px;
+    };
+
+    @include lg-block() {
+      max-width: calc(100% / 12 * 10 - 60px);
+      margin: 0 auto 55px;
+
+      .open & {
+        margin: 0 auto 90px;
+      }
     };
 
     &-li {
@@ -34,6 +134,14 @@
         font-size: 24px;
       };
 
+      @include md-block() {
+        font-size: 40px;
+      };
+
+      @include lg-block() {
+        margin-bottom: 30px;
+      };
+
       &:last-child {
         margin-bottom: 0;
       }
@@ -41,19 +149,66 @@
 
     &-text {
       font-size: inherit;
+
+      @include md-block() {
+        font-size: 40px;
+      };
+
+      @include lg-block() {
+        width: calc(100% / 12 * 4 - 60px);
+      };
+    }
+
+    &-time {
+      display: none;
+      @include lg(display, block);
+
+      .img-wrap {
+        display: inline-block;
+        vertical-align: middle;
+        width: 81px;
+        margin-right: 21px;
+      }
+
+      .text {
+        display: inline-block;
+      }
     }
 
     &-price {
-      color: $clr-orange;
-      padding: 4px 6px 4px 11px;
-      border: 1px solid $clr-orange;
-      border-radius: 50px;
-      min-width: 66px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 70px;
+      height: 30px;
       box-sizing: border-box;
+      border: 1px solid $clr-orange;
+
+      color: $clr-orange;
       text-align: center;
       font-size: inherit;
+      line-height: 1em;
+      border-radius: 50px;
+      font-weight: 300;
 
-      position: relative;
+      @include sm-block() {
+        width: 100px;
+        height: 42px;
+      };
+
+      @include md-block() {
+        width: 140px;
+        height: 52px;
+        border: 2px solid $clr-orange;
+      };
+
+      @include lg-block() {
+        width: 160px;
+        border: 4px solid $clr-orange;
+        height: 72px;
+        font-weight: 400;
+      };
 
       &:hover {
         cursor: pointer;
@@ -93,14 +248,41 @@
         position: absolute;
         top: 50%; left: 0;
         transform: translateY(-50%) translateX(-50%);
-        
-        background: $clr-orange;
-        padding: 3px;
-        border-radius: 50px;
+        box-sizing: border-box;
+        width: 14px;
+        height: 14px;
 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: $clr-orange;
+        border-radius: 50%;
         font-size: 8px;
+        line-height: 115%;
         font-weight: 500;
         color: $clr-white;
+
+        @include sm-block() {
+          width: 22px;
+          height: 22px;
+          font-size: 10px;
+          line-height: 100%;
+        };
+
+        @include md-block() {
+          width: 26px;
+          height: 26px;
+          font-size: 16px;
+          line-height: 100%;
+        };
+
+        @include lg-block() {
+          width: 30px;
+          height: 30px;
+          font-size: 18px;
+          line-height: 100%;
+        };
       }
     }
   }
@@ -110,11 +292,72 @@
     flex-flow: column nowrap;
     align-items: center;
 
+    @include lg-block() {
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      max-width: calc(100% / 12 * 10 - 60px);
+      margin: 0 auto;
+    };
+
     &-tip {
       margin-bottom: 20px;
 
       font-size: 16px;
       text-align: center;
+
+      @include sm-block() {
+        font-size: 20px;
+      };
+
+      @include md-block() {
+        font-size: 24px;
+        max-width: calc(100% / 12 * 9);
+      };
+
+      @include lg-block() {
+        max-width: 560px;
+        margin-bottom: 0;
+      };
+    }
+  }
+
+  &__gearwheel {
+    position: absolute;
+    display: none;
+
+    @include lg(display, block);
+  }
+
+  $padding-top: 80px;
+  &__blue-sm {
+    top: #{150px - $padding-top};
+    left: calc(100% + 60px);
+    width: 91px;
+  }
+
+  &__orange-sm {
+    top: #{458px - $padding-top};
+    right: calc(100% + 32px);
+    width: 150px;
+  }
+
+  &__blue-lg {
+    top: #{807px - $padding-top};
+    left: calc(100% - 11px);
+    width: 230px;
+  }
+
+  &__orange-lg {
+    opacity: 0;
+    bottom: -112px;
+    left: -207px;
+    z-index: -1;
+
+    transition: opacity .3s ease;
+    transition-delay: 1s;
+
+    .prices__content.open & {
+      opacity: 1;
     }
   }
 }

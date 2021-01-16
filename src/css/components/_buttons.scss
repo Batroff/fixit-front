@@ -1,34 +1,54 @@
-.button-purple {
-  $font-size: 11px; // xs
+.button-gradient {
   $line-height: 1em;
   $letter-spacing: .185em;
-  $padding-vert: 23px;
-  $border-width: 4px;
+  $color: $clr-white;
+  $color-gradient-1: $clr-purple;
+  $color-gradient-2: #8526FF;
 
-  $border-clr: $clr-purple;
-  $border-clr--active: lighten($border-clr, 5%);
+  box-sizing: border-box;
+  border-radius: 100px;
 
-  display: inline-block;
-  margin: #{$padding-vert + $border-width} 0;
-  font-size: $font-size;
-
-  & > label {
-    padding: $padding-vert 30px;
-    border: $border-width solid $border-clr;
-    border-radius: 100px;
-
-    font-size: inherit;
-    line-height: $line-height;
-    font-weight: 700;
-    letter-spacing: $letter-spacing;
-    transition: border .2s ease;
-
-    &:active {
-      border: $border-width solid $border-clr--active;
-    }
+  outline: none;
+  @supports (appearance: none) {
+    appearance: none;
   }
 
-  & > input {
-    display: none;
+  background: linear-gradient(95deg, $color-gradient-1, $color-gradient-2);
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+  font-weight: 700;
+  color: $color;
+  border: 0;
+
+  transition: transform .1s ease;
+  transform: scale3d(1, 1, 1) translate(0, 0);
+
+  &:active {
+    transform: scale3d(.99, .99, 1) translate(1px, 1px);
+  }
+
+  &:focus {
+    //transform: scale3d(1, 1, 1) translate(2px, 2px);
+  }
+
+  &:hover {
+    cursor: pointer;
+    @include lg-block() {
+      transform: scale3d(1.05, 1.05, 1.05);
+    };
+  }
+
+  &[type="button"] {
+    width: 176px;
+    height: 55px;
+
+    font-size: 11px;
+  }
+
+  &[type="submit"] {
+    width: 160px;
+    height: 40px;
+
+    font-size: 12px;
   }
 }

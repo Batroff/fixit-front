@@ -86,7 +86,6 @@
 
     @include md-block() {
       width: 330px;
-      transform: rotateZ(195deg) translate(-70px, -70px);
     };
 
     @include lg-block() {

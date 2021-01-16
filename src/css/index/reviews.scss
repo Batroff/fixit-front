@@ -88,14 +88,13 @@
     $size-sm: 16px;
     $size-md: 25px;
 
-    // 10x10 16x16 25x25
-
     position: absolute;
     top: 50%;
     display: block;
     width: $size;
     height: $size;
     z-index: 2;
+    transition: transform .2s ease;
 
     @include sm-block() {
       width: $size-sm;
@@ -107,22 +106,34 @@
       height: $size-md;
     };
 
+    &:hover {
+      cursor: pointer;
+    }
+
     &-prev {
       border-top: $border-width solid $border-color;
       border-left: $border-width solid $border-color;
-      transform: rotateZ(-45deg) translateY(-50%);
+      transform: rotateZ(-45deg) translateY(-50%) scale(1, 1);
 
       left: -13px;
       @include sm(left, -20px);
+
+      &:active {
+        transform: rotateZ(-45deg) translateY(-50%) scale(.9, .9);
+      }
     }
 
     &-next {
       border-top: $border-width solid $border-color;
       border-right: $border-width solid $border-color;
-      transform: rotateZ(45deg) translateY(-50%);
+      transform: rotateZ(45deg) translateY(-50%) scale(1, 1);
 
       right: -13px;
       @include sm(right, -20px);
+
+      &:active {
+        transform: rotateZ(45deg) translateY(-50%) scale(.9, .9);
+      }
     }
   }
 

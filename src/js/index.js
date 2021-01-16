@@ -32,6 +32,19 @@ window.onload = function () {
       isSalesScrolled = true;
     }
   }, 200);
+
+  /* Prices show more button */
+  const pricesWrapper = document.querySelector('.prices__wrapper');
+  const pricesBtn = prices.querySelector('.prices__show-btn');
+  const pricesContent = prices.querySelector('.prices__content');
+  pricesBtn.addEventListener('click', function handler(e) {
+    pricesContent.addEventListener('transitionend', function trHandler(e) {
+      pricesWrapper.removeChild(pricesBtn);
+      this.removeEventListener('transitionend', trHandler);
+    });
+    pricesContent.classList.add('open');
+    this.removeEventListener('click', handler);
+  });
 }
 
 window.addEventListener('scroll', function handler() {
@@ -53,5 +66,4 @@ window.addEventListener('scroll', function handler() {
 
   this.removeEventListener('scroll', handler);
 });
-
 

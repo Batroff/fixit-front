@@ -45,6 +45,20 @@ window.onload = function () {
     pricesContent.classList.add('open');
     this.removeEventListener('click', handler);
   });
+
+  /* <a> smooth scrolling */
+  const anchors = document.querySelectorAll('a[data-scroll]');
+  anchors.forEach(anchor =>
+    anchor.addEventListener('click', function handler(e) {
+      e.preventDefault();
+
+      const targetID = this.getAttribute('href');
+      document.querySelector(targetID).scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      })
+    })
+  );
 }
 
 window.addEventListener('scroll', function handler() {

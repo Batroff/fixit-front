@@ -9,11 +9,25 @@
   &__title {
     margin-bottom: 44px;
     text-align: center;
+
+    @include lg(margin-bottom, 80px);
+  }
+
+  &__content {
+    @include lg-block() {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+    };
   }
 
   &__contact {
     margin-left: calc(100% / 12);
     margin-bottom: 29px;
+    @include lg-block() {
+      margin: 0 45px 0 0;
+    };
 
     &-subtitle {
       font-size: 15px;
@@ -52,6 +66,38 @@
     }
   }
 
+  &__phone {
+    @include lg-block() {
+      width: 350px;
+      border: 10px solid #333333;
+      border-radius: 50px;
+      position: relative;
+
+      background: #1c1c1c;
+
+      &:before {
+        display: block;
+      }
+    };
+
+    &:before {
+      content: '';
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50%;
+      height: 25px;
+
+      background: #333333;
+      border: 3px solid $clr-purple;
+      border-top: none;
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 25px;
+    }
+  }
+
   &__form {
     padding: 20px 25px;
     display: flex;
@@ -59,6 +105,7 @@
     box-sizing: border-box;
     @include sm(padding, 25px 35px);
     @include md(padding, 25px 70px);
+    @include lg(padding, 60px 30px);
 
     align-items: center;
     border: 3px solid $clr-purple;
@@ -66,6 +113,13 @@
     @include md-block() {
       max-width: 600px;
       margin: 0 auto;
+    };
+
+    @include lg-block() {
+      max-width: 100%;
+      border-radius: 40px;
+      min-height: 600px;
+      justify-content: center;
     };
 
     .title {
@@ -80,6 +134,11 @@
       @include md-block() {
         font-size: 40px;
         margin-bottom: 40px;
+      };
+
+      @include lg-block() {
+        font-size: 24px;
+        margin-bottom: 35px;
       };
     }
 

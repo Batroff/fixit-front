@@ -81,25 +81,42 @@
       margin-bottom: 0;
     }
 
-    &-circle {
+    &:nth-child(5),
+    &:nth-child(6) {
       display: none;
-      width: 304px;
-      height: 304px;
-      border-radius: 50%;
-      margin-bottom: 35px;
+      @include lg(display, flex);
+    }
 
+    &-circle {
       @include lg-block() {
+        position: relative;
+        width: 304px;
+        height: 304px;
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-bottom: 35px;
       };
 
-      .advantages__item:nth-child(2n - 1) &{
-        border: 5px solid $clr-white;
-      }
+      &:after {
+        content: '';
+        display: none;
+        @include lg(display, block);
 
-      .advantages__item:nth-child(2n) &{
-        border: 5px solid $clr-purple;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+
+        .advantages__item:nth-child(2n - 1) &{
+          border: 5px solid $clr-white;
+        }
+
+        .advantages__item:nth-child(2n) &{
+          border: 5px solid $clr-purple;
+        }
       }
     }
 

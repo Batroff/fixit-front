@@ -9,8 +9,7 @@ module.exports = {
   mode: isDev ? 'development' : 'production',
 
   entry: {
-    common: ['@babel/polyfill', './js/common.js'],
-    index: './js/',
+    index: ['@babel/polyfill', './js/']
   },
   output: {
     filename: '[name].js',

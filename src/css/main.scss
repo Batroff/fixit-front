@@ -9,6 +9,10 @@ html {
   overflow-x: hidden;
 }
 
+main {
+  overflow: hidden;
+}
+
 .wrapper {
   @include wrapper();
 }

@@ -1,9 +1,11 @@
 .sales {
   background: $clr-gray;
   color: $clr-white;
+  @include lg(padding, 100px 0 150px);
 
   &__bg-shape {
     margin-bottom: 10px;
+    @include lg(display, none);
   }
 
   &__title {
@@ -12,8 +14,24 @@
     @include sm(margin-bottom, 70px);
   }
 
+  &__content {
+    @include lg-block() {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-items: center;
+    };
+  }
+
   &__list {
     margin-bottom: 31px;
+
+    @include lg-block() {
+      max-width: calc(100% / 12 * 6 - 60px);
+      margin-left: calc(100% / 12 * 1 + 30px);
+      margin-right: 30px;
+      margin-bottom: 0;
+    };
   }
 
   &__list-li {
@@ -28,6 +46,15 @@
     $marker-width-sm: 30px;
     $marker-height-sm: 30px;
 
+    // MD
+    $marker-width-md: 50px;
+    $marker-height-md: 50px;
+
+    // LG
+    $marker-width-lg: 60px;
+    $marker-height-lg: 60px;
+    $left-shift-lg: 30px;
+
     position: relative;
     margin-left: #{$left-shift + $marker-width};
     margin-bottom: 20px;
@@ -40,6 +67,13 @@
 
     @include md-block() {
       font-size: 30px;
+      margin-left: #{$left-shift + $marker-width-md};
+    };
+
+    @include lg-block() {
+      margin-bottom: 60px;
+      font-size: 35px;
+      margin-left: #{$left-shift-lg + $marker-width-lg};
     };
 
     &:last-child {
@@ -56,25 +90,47 @@
         height: $marker-height-sm;
       };
 
+      @include md-block() {
+        width: $marker-width-md;
+        height: $marker-height-md;
+      };
+
+      @include lg-block() {
+        width: $marker-width-lg;
+        height: $marker-height-lg;
+      };
+
       background: url("../images/svg/sales__marker.svg") no-repeat center;
       background-size: 100%;
 
       display: block;
       position: absolute;
-      right: calc(100% + #{$left-shift});
+      right: calc(100% + #{$left-shift-lg});
       top: 50%;
 
       transform: translateY(-50%);
     }
   }
 
-  &__bg-person {
+  &__person {
     position: relative;
     left: -100%;
     transition: left 1s ease-in-out;
 
+    @include lg-block() {
+      display: none;
+    };
+
     &.scrolled {
       left: 0;
+    }
+
+    &-lg {
+      display: none;
+      overflow: hidden;
+      @include lg(display, block);
+
+      border-radius: 150px;
     }
   }
 }

@@ -6,19 +6,23 @@
   <div class="wrapper">
     <h2 class="sales__title title-underline">Актуальные акции</h2>
 
-    <ul class="sales__list">
-      <li class="sales__list-li">Бесплатный выезд мастера.</li>
-      <li class="sales__list-li">Бесплатная диагностика.</li>
-      <li class="sales__list-li">Скидка 10% за отзыв в нашей <span class="color-orange text-underline">группе ВКонтакте</span>.</li>
-      <li class="sales__list-li">При замене дисплея, защитное стекло в подарок.</li>
-      <li class="sales__list-li">Скидка 30% при предъявлении Студенческого билета <wbr>или Пенсионного удостоверения.</li>
-    </ul>
+    <div class="sales__content">
+      <ul class="sales__list">
+        <li class="sales__list-li">Бесплатный выезд мастера.</li>
+        <li class="sales__list-li">Бесплатная диагностика.</li>
+        <li class="sales__list-li">Скидка 10% за отзыв в нашей <span class="color-orange text-underline">группе ВКонтакте</span>.</li>
+        <li class="sales__list-li">При замене дисплея, защитное стекло в подарок.</li>
+        <li class="sales__list-li">Скидка 30% при предъявлении Студенческого билета <wbr>или Пенсионного удостоверения.</li>
+      </ul>
+
+      <div class="sales__person-lg"><img src="./images/sales-bg.jpg" alt=""></div>
+    </div>
   </div>
 
-  <picture class="sales__bg-person">
+  <picture class="sales__person">
     <source media="(max-width: 479px)" srcset="./images/sales-bg-480.png" loading="lazy">
     <source media="(max-width: 1365px)" srcset="./images/sales-bg-768.png" loading="lazy">
-    <source media="(min-width: 1366px)" srcset="./images/sales-bg.jpg">
-    <img src="./images/sales-bg.jpg" alt="">
+    <source media="(min-width: 1366px)" srcset="./images/sales-bg-768.png">
+    <img src="./images/sales-bg-768.png" alt="">
   </picture>
 </section>

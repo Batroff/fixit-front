@@ -22,7 +22,7 @@ window.onload = function () {
   });
 
   /* Sales scrolling image effect */
-  const salesImg = document.querySelector('.sales__bg-person') ;
+  const salesImg = document.querySelector('.sales__person') ;
   const salesOffset = salesImg.offsetTop - document.documentElement.clientHeight;
   let isSalesScrolled = false;
   let timer = setInterval(function() {

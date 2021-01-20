@@ -31,7 +31,7 @@ window.onload = function () {
       salesImg.classList.add('scrolled');
       isSalesScrolled = true;
     }
-  }, 200);
+  }, 100);
 
   /* Prices show more button */
   const pricesWrapper = document.querySelector('.prices__wrapper');
@@ -59,25 +59,47 @@ window.onload = function () {
       })
     })
   );
-}
 
-window.addEventListener('scroll', function handler() {
+  /* Services parallax scrolling */
+  const servicesWheel = document.querySelector('.services__gearwheel');
+  if (getComputedStyle(servicesWheel).display !== 'none')
+    window.addEventListener('scroll',  parallaxRotation(servicesWheel));
+
+  /* Prices parallax scrolling */
+  const pricesWheels = document.querySelectorAll('.prices__gearwheel');
+
+  window.addEventListener('scroll', parallaxRotation(pricesWheels));
+
+  function parallaxRotation(elements) {
+
+    return function(e) {
+      let rotation = (window.pageYOffset / window.innerHeight * 300).toFixed(2);
+
+      if (elements.length > 0)
+        elements.forEach(elem => elem.style.transform = 'rotateZ(' + rotation + 'deg)');
+      else
+        elements.style.transform = 'rotateZ(' + rotation + 'deg)';
+    }
+  }
+
+
   /* Reviews block slider Swiper */
-  Swiper.use([Navigation, Pagination]);
-  const swiperReviews = new Swiper('.swiper-container', {
-    loop: true,
-    autoHeight: true,
+  window.addEventListener('scroll', initSlider, { once: true });
 
-    pagination: {
-      el: '.reviews__pagination',
-    },
+  function initSlider() {
+    Swiper.use([Navigation, Pagination]);
+    const swiperReviews = new Swiper('.swiper-container', {
+      loop: true,
+      autoHeight: true,
 
-    navigation: {
-      nextEl: '.reviews__btn-next',
-      prevEl: '.reviews__btn-prev',
-    },
-  });
+      pagination: {
+        el: '.reviews__pagination',
+      },
 
-  this.removeEventListener('scroll', handler);
-});
-
+      navigation: {
+        nextEl: '.reviews__btn-next',
+        prevEl: '.reviews__btn-prev',
+      },
+    });
+  }
+}

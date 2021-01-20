@@ -90,6 +90,7 @@ gulp.task('html:build', function() {
     .pipe(gulpif(isSync, browserSync.stream()));
 });
 
+// TODO: add webp/jpeg-2000 converter
 gulp.task('sprites:build', function() {
   return gulp.src(projPath.src.sprites)
     .pipe(gulpif(!isDev, imagemin([

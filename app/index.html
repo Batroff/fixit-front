@@ -399,11 +399,11 @@
         <form action="" class="contacts__form">
           <p class="title">Задайте нам вопрос</p>
 
-          <input class="input input-name" placeholder="Ваше имя" type="text" name="name" required>
-          <input class="input input-phone" placeholder="Ваш телефон" type="number" name="phone" required>
-          <textarea class="textarea textarea-question" placeholder="Ваш вопрос" type="text" name="question" rows="2"></textarea>
+          {% csrf_token %}
+          {{form.name}}
+          {{form.number}}
+          {{form.problem}}
 
-          <!--      <input type="submit" class="button" value="Отправить">-->
           <button type="submit" class="contacts__form-btn button-gradient">Отправить</button>
           <p class="agreement">Оставляя заявку, вы соглашаетесь с <span class="text-underline">политикой конфиденциальности.</span></p>
         </form>

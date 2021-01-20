@@ -23,7 +23,7 @@ const isSync = argv.sync === 'true';
 
 // Path ================================================================================================================
 const srcDir = ('src')
-const buildDir = ('build');
+const buildDir = ('app');
 
 const projPath = {
   build: {

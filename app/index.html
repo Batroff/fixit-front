@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta content="text/html" charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>FixIT</title>
+  <link rel="preload" href="./css/main.css" as="style">
+  <link rel="preload" href="./css/index.css" as="style">
+
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/index.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" href="./images/favicon/safari-pinned-tab.svg" color="#ff6b00">
+  <meta name="msapplication-TileColor" content="#232323">
+  <meta name="theme-color" content="#232323">
+</head>
+<body>
+
+<main role="main">
+  <header class="menu">
+  <div class="wrapper menu__wrapper">
+    <div class="menu__phone">
+      <a href="tel:+79996665544"><img src="./images/svg/menu__phone.svg" alt="Позвонить"></a>
+    </div>
+
+    <div class="menu__logo">
+      <a href="#"><img src="./images/svg/menu__logo.svg" alt=""></a>
+    </div>
+
+    <nav class="menu__nav">
+      <ul class="menu__ul">
+        <li class="menu__li"><a href="#prices" data-scroll>Цены</a></li>
+        <li class="menu__li"><a href="#advantages" data-scroll>Преимущества</a></li>
+        <li class="menu__li"><a href="#sales" data-scroll>Акции</a></li>
+        <li class="menu__li"><a href="#reviews" data-scroll>Отзывы</a></li>
+        <li class="menu__li"><a href="#contacts" data-scroll>Контакты</a></li>
+      </ul>
+    </nav>
+
+    <div class="menu__burger"><span class="menu__burger-middle"></span></div>
+  </div>
+</header>
+  <section class="about">
+  <div class="wrapper">
+    <h1 class="about__title">Мы можем<br>вам помочь</h1>
+    <h1 class="about__title-lg">Мы можем вам помочь</h1>
+    <p class="about__subtitle">FixIT предоставляет<br>широкий спектр услуг<br>по ремонту вашей техники.</p>
+    <p class="about__subtitle-lg">FixIT предоставляет широкий спектр<br>услуг  по быстрому, качественному<br>и доступному ремонту вашей техники.</p>
+
+    <a href="tel:+79996665544">
+      <button class="about__button button-gradient" name="call" type="button" value="Позвонить нам">Позвонить нам</button>
+    </a>
+
+    <div class="about__banner">
+      <img src="./images/about-banner.png" alt="">
+    </div>
+  </div>
+
+  <div class="about__bg-shape">
+    <img src="./images/svg/triangle-shape.svg" alt="">
+  </div>
+
+  <picture class="about__bg-laptop">
+    <source media="(max-width: 479px)" srcset="./images/about-bg-480.png">
+    <source media="(max-width: 767px)" srcset="./images/about-bg-768.png">
+    <img src="./images/about-bg-768.png" alt="">
+  </picture>
+</section>
+  <section class="services">
+  <div class="wrapper">
+    <h2 class="services__title title-underline">Мы ремонтируем</h2>
+    <div class="services__items">
+
+      <div class="services__item">
+        <div class="services__item-img">
+          <div class="img-wrap"><img src="./images/svg/services-1.svg" alt=""></div>
+        </div>
+        <h3 class="services__item-text">Компьютеры</h3>
+      </div>
+
+      <div class="services__item">
+        <div class="services__item-img">
+          <div class="img-wrap"><img src="./images/svg/services-2.svg" alt=""></div>
+        </div>
+        <h3 class="services__item-text">Ноутбуки</h3>
+      </div>
+
+      <div class="services__item">
+        <div class="services__item-img">
+          <div class="img-wrap"><img src="./images/svg/services-3.svg" alt=""></div>
+        </div>
+        <h3 class="services__item-text">Mac & Air</h3>
+      </div>
+
+      <div class="services__item"></div>
+
+      <div class="services__item"></div>
+
+      <div class="services__item">
+        <div class="services__item-img">
+          <picture class="img-wrap">
+            <source media="(max-width: 480px)" srcset="./images/svg/services-4.svg">
+            <img src="./images/svg/services-4-lg.svg" alt="">
+          </picture>
+        </div>
+        <h3 class="services__item-text">Смартфоны</h3>
+      </div>
+
+      <div class="services__item">
+        <div class="services__item-img">
+          <div class="img-wrap"><img src="./images/svg/services-5.svg" alt=""></div>
+        </div>
+        <h3 class="services__item-text">Планшеты</h3>
+      </div>
+
+      <div class="services__item">
+        <div class="services__item-img">
+          <div class="img-wrap"><img src="./images/svg/services-6.svg" alt=""></div>
+        </div>
+        <h3 class="services__item-text">Принтеры</h3>
+      </div>
+    </div>
+
+    <div class="services__phone"><img src="./images/services-phone.png" alt=""></div>
+  </div>
+
+  <div class="services__bg-shape"><img src="./images/svg/triangle-shape.svg" alt=""></div>
+  <div class="services__gearwheel"><img src="./images/svg/services-gearwheel.svg" alt=""></div>
+  <div class="services__laptop"><img src="./images/services-laptop.png" alt=""></div>
+</section>
+  <section class="advantages" id="advantages">
+  <div class="wrapper">
+    <h2 class="advantages__title title-underline">Наши преимущества</h2>
+    <div class="advantages__items">
+
+      <div class="advantages__item">
+        <div class="advantages__item-circle">
+          <div class="advantages__item-img">
+            <img src="./images/svg/advantages-1.svg" alt="">
+          </div>
+        </div>
+
+        <h3 class="advantages__item-text"><span class="color-orange">Честные</span> сотрудники</h3>
+      </div>
+
+      <div class="advantages__item">
+        <div class="advantages__item-circle">
+          <div class="advantages__item-img">
+            <img src="./images/svg/advantages-2.svg" alt="">
+          </div>
+        </div>
+
+        <h3 class="advantages__item-text"><span class="color-orange">Доступная</span> цена</h3>
+      </div>
+
+      <div class="advantages__item">
+        <div class="advantages__item-circle">
+          <picture class="advantages__item-img">
+            <source media="(max-width: 1365px)" srcset="./images/svg/advantages-3.svg" alt="">
+            <img src="./images/svg/advantages-3-lg.svg" alt="">
+          </picture>
+        </div>
+
+        <h3 class="advantages__item-text"><span class="color-orange">Быстрая</span> работа</h3>
+      </div>
+
+      <div class="advantages__item">
+        <div class="advantages__item-circle">
+          <div class="advantages__item-img">
+            <img src="./images/svg/advantages-4.svg" alt="">
+          </div>
+        </div>
+
+        <h3 class="advantages__item-text"><span class="color-orange">Гарантия</span> качества</h3>
+      </div>
+
+      <div class="advantages__item">
+        <div class="advantages__item-circle">
+          <div class="advantages__item-img">
+            <img src="./images/svg/advantages-5.svg" alt="">
+          </div>
+        </div>
+
+        <h3 class="advantages__item-text"><span class="color-orange">Починим</span> на месте</h3>
+      </div>
+
+      <div class="advantages__item">
+        <div class="advantages__item-circle">
+          <div class="advantages__item-img">
+            <img src="./images/svg/advantages-6.svg" alt="">
+          </div>
+        </div>
+
+        <h3 class="advantages__item-text"><span class="color-orange">Доставка</span> за наш счёт</h3>
+      </div>
+    </div>
+  </div>
+</section>
+  <section class="sales" id="sales">
+  <div class="sales__bg-shape">
+    <img src="./images/svg/triangle-horizontal.svg" alt="">
+  </div>
+
+  <div class="wrapper">
+    <h2 class="sales__title title-underline">Актуальные акции</h2>
+
+    <div class="sales__content">
+      <ul class="sales__list">
+        <li class="sales__list-li">Бесплатный выезд мастера.</li>
+        <li class="sales__list-li">Бесплатная диагностика.</li>
+        <li class="sales__list-li">Скидка 10% за отзыв в нашей <span class="color-orange text-underline">группе ВКонтакте</span>.</li>
+        <li class="sales__list-li">При замене дисплея, защитное стекло в подарок.</li>
+        <li class="sales__list-li">Скидка 30% при предъявлении Студенческого билета <wbr>или Пенсионного удостоверения.</li>
+      </ul>
+
+      <div class="sales__person-lg"><img src="./images/sales-bg.jpg" alt=""></div>
+    </div>
+  </div>
+
+  <picture class="sales__person">
+    <source media="(max-width: 479px)" srcset="./images/sales-bg-480.png" loading="lazy">
+    <source media="(max-width: 1365px)" srcset="./images/sales-bg-768.png" loading="lazy">
+    <source media="(min-width: 1366px)" srcset="./images/sales-bg-768.png">
+    <img src="./images/sales-bg-768.png" alt="">
+  </picture>
+</section>
+  <section class="prices" id="prices">
+  <div class="wrapper prices__wrapper">
+<!--    <h2 class="prices__title title-underline">Цены на популярные услуги</h2>-->
+    <h2 class="prices__title title-underline">Популярные услуги</h2>
+
+    <div class="prices__content">
+
+      <ul class="prices__list">
+
+        <li class="prices__list-li">
+          <p class="prices__list-text">Установка<br>Windows</p>
+          <div class="prices__list-time">
+            <div class="img-wrap"><img src="./images/svg/prices-clock.svg" alt=""></div>
+            <span class="text">~40 минут</span>
+          </div>
+          <div class="prices__list-price"><span>700</span></div>
+        </li>
+
+        <li class="prices__list-li">
+          <p class="prices__list-text">Чистка<br>устройства</p>
+          <div class="prices__list-time">
+            <div class="img-wrap"><img src="./images/svg/prices-clock.svg" alt=""></div>
+            <span class="text">~20 минут</span>
+          </div>
+          <p class="prices__list-price">600</p>
+        </li>
+
+        <li class="prices__list-li">
+          <p class="prices__list-text">Удаление<br>вирусов</p>
+          <div class="prices__list-time">
+            <div class="img-wrap"><img src="./images/svg/prices-clock.svg" alt=""></div>
+            <span class="text">~40 минут</span>
+          </div>
+          <div class="prices__list-price">300</div>
+        </li>
+
+        <li class="prices__list-li">
+          <p class="prices__list-text">Настройка<br>роутера</p>
+          <div class="prices__list-time">
+            <div class="img-wrap"><img src="./images/svg/prices-clock.svg" alt=""></div>
+            <span class="text">~30 минут</span>
+          </div>
+          <p class="prices__list-price">300</p>
+        </li>
+
+        <li class="prices__list-li">
+          <p class="prices__list-text">Оптимизация<br>работы</p>
+          <div class="prices__list-time">
+            <div class="img-wrap"><img src="./images/svg/prices-clock.svg" alt=""></div>
+            <span class="text">~10 минут</span>
+          </div>
+          <p class="prices__list-price">400</p>
+        </li>
+
+        <li class="prices__list-li">
+          <p class="prices__list-text">Установка<br>программ</p>
+          <div class="prices__list-time">
+            <div class="img-wrap"><img src="./images/svg/prices-clock.svg" alt=""></div>
+            <span class="text">~40 минут</span>
+          </div>
+          <p class="prices__list-price">100</p>
+        </li>
+
+        <li class="prices__list-li">
+          <p class="prices__list-text">Замена<br>дисплея</p>
+          <div class="prices__list-time">
+            <div class="img-wrap"><img src="./images/svg/prices-clock.svg" alt=""></div>
+            <span class="text">~40 минут</span>
+          </div>
+          <p class="prices__list-price">800</p>
+        </li>
+
+        <li class="prices__list-li">
+          <p class="prices__list-text">Замена<br>аккумулятора</p>
+          <div class="prices__list-time">
+            <div class="img-wrap"><img src="./images/svg/prices-clock.svg" alt=""></div>
+            <span class="text">~40 минут</span>
+          </div>
+          <p class="prices__list-price">700</p>
+        </li>
+
+      </ul>
+
+      <div class="prices__contact">
+        <p class="prices__contact-tip">Не нашли цену на решение своей проблемы? Жмите на кнопку ниже! Оператор нашего сервиса обязательно поможет вам!</p>
+
+        <a href="tel:+79996665544">
+          <button class="prices__contact-button button-gradient" type="button" value="Позвонить нам">Позвонить нам</button>
+        </a>
+      </div>
+
+      <div class="prices__orange-lg prices__gearwheel"><img src="./images/svg/prices-wheel-orange-lg.svg" alt=""></div>
+    </div>
+
+    <p class="prices__show-btn">Показать ещё</p>
+
+    <div class="prices__blue-sm prices__gearwheel"><img src="./images/svg/prices-wheel-blue-sm.svg" alt=""></div>
+    <div class="prices__orange-sm prices__gearwheel"><img src="./images/svg/prices-wheel-orange-sm.svg" alt=""></div>
+    <div class="prices__blue-lg prices__gearwheel"><img src="./images/svg/prices-wheel-blue-lg.svg" alt=""></div>
+  </div>
+</section>
+  <section class="reviews" id="reviews">
+  <div class="reviews__wrapper wrapper">
+    <h2 class="reviews__title title-underline">Последние отзывы</h2>
+
+    <div class="reviews__slider-wrapper">
+      <div class="swiper-container reviews__slider">
+        <div class="swiper-wrapper reviews__container">
+
+          <div class="swiper-slide reviews__slide">
+            <p class="reviews__slide-text">Обратился за поддержкой. Очень быстро отозвались. Все качественно. Спасибо.</p>
+            <p class="reviews__slide-author"><a href="#">vk.com/ksander952</a></p>
+          </div>
+
+          <div class="swiper-slide reviews__slide">
+            <p class="reviews__slide-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac lacus nec felis luctus dictum eu ac ligula.</p>
+            <p class="reviews__slide-author"><a href="#">vk.com/ksander952</a></p>
+          </div>
+
+          <div class="swiper-slide reviews__slide">
+            <p class="reviews__slide-text">Sed non justo nunc. In placerat nulla libero, sed vehicula ipsum dignissim quis.</p>
+            <p class="reviews__slide-author"><a href="#">vk.com/ksander952</a></p>
+          </div>
+
+          <div class="swiper-slide reviews__slide">
+            <p class="reviews__slide-text">Mauris mollis tristique erat, vitae auctor dolor dignissim at.</p>
+            <p class="reviews__slide-author"><a href="#">vk.com/ksander952</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reviews__btn reviews__btn-prev"></div>
+      <div class="reviews__btn reviews__btn-next"></div>
+
+      <div class="reviews__pagination swiper-pagination"></div>
+    </div>
+
+    <p class="reviews__request">Свой отзыв можно оставить в нашей <span class="color-orange text-underline"><a href="#">группе ВКонтакте</a></span>, заполнив специальную форму.</p>
+  </div>
+</section>
+  <section class="contacts" id="contacts">
+  <div class="wrapper">
+    <h2 class="contacts__title title-underline">Наши контакты</h2>
+
+    <div class="contacts__content">
+      <div class="contacts__contact">
+        <p class="contacts__contact-subtitle">Свяжитесь с нами любым<br>удобным для вас способом.</p>
+
+        <div class="contacts__contact-phone">
+          <a href="tel:+74712999999">
+            <div class="img-wrap"><img src="./images/svg/contacts__phone.svg" alt="Позвонить нам"></div>
+            <span>+7(4712)99-99-99</span>
+          </a>
+        </div>
+        <div class="contacts__contact-vk">
+          <a href="https://vk.com/">
+            <div class="img-wrap"><img src="./images/svg/contacts__vk.svg" alt="Группа вконтакте"></div>
+            <span>Наша группа Вконтакте</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="contacts__phone">
+        <form action="" class="contacts__form">
+          <p class="title">Задайте нам вопрос</p>
+
+          <input class="input input-name" placeholder="Ваше имя" type="text" name="name" required>
+          <input class="input input-phone" placeholder="Ваш телефон" type="number" name="phone" required>
+          <textarea class="textarea textarea-question" placeholder="Ваш вопрос" type="text" name="question" rows="2"></textarea>
+
+          <!--      <input type="submit" class="button" value="Отправить">-->
+          <button type="submit" class="contacts__form-btn button-gradient">Отправить</button>
+          <p class="agreement">Оставляя заявку, вы соглашаетесь с <span class="text-underline">политикой конфиденциальности.</span></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+  <footer class="footer">
+  <div class="wrapper">
+    <p class="footer__copyright">©2020-2021 FIX-IT.ru</p>
+    <p class="footer__text">Любое использование либо копирование материалов сайта, элементов дизайна и оформленияне допускается.</p>
+  </div>
+</footer>
+</main>
+
+<script src="js/index.js" type="text/javascript"></script>
+</body>
+</html>
